@@ -1,6 +1,6 @@
-﻿Public Class MultiGenTemperatureIcon
+﻿Public Class MultiGenTemperatureIconRight
     Public Property Tname As String
-    Public Property TempValue As Integer
+    Public Property TempValue As Double
     Public Property LEDcolor As Color
     ''' <summary>
     ''' Cambio dell'etichetta descrittiva del nome dell'icona
@@ -18,9 +18,8 @@
     ''' </summary>
     ''' <param name="TempValue">Valore della temperatura</param>
     ''' <remarks></remarks>
-    Public Sub changeTemp(ByVal TempValue As Integer)
-        Dim temp As String = TempValue.ToString
-        lblTemp.Text = Format(temp, "00.0°C")
+    Public Sub changeTemp(ByVal TempValue As Double)
+        lblTemp.Text = Format(TempValue, "##0.0#°C")
         lblTemp.Invalidate()
     End Sub
     ''' <summary>
@@ -28,7 +27,7 @@
     ''' </summary>
     ''' <param name="LEDcolor">Colore del Led</param>
     ''' <remarks></remarks>
-    Public Sub changeTemp(ByVal LEDcolor As Color)
+    Public Sub changeLED(ByVal LEDcolor As Color)
         If LEDcolor = Color.Red Then
             pbLED.Image = My.Resources.ledred
         End If
